@@ -10,6 +10,15 @@
   let filter = $state<Filters>("all");
   let filteredTodos = $derived(filterTodos());
 
+  $effect(() => {
+    const savedTodos = localStorage.getItem("todos");
+    savedTodos && (todos = JSON.parse(savedTodos));
+  });
+
+  $effect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  });
+
   function addTodo(event: KeyboardEvent) {
     if (event.key !== "Enter") return;
 
