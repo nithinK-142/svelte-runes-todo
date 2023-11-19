@@ -66,9 +66,9 @@
     return todos.filter((todo) => !todo.done).length;
   }
 
-  $effect(() => {
-    console.log(todos);
-  });
+  // $effect(() => {
+  //   console.log(todos);
+  // });
 </script>
 
 <div class="todos">
@@ -120,14 +120,19 @@
   }
 
   input[type="text"] {
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
   }
 
   input[type="checkbox"] {
+    transform: scale(1.5);
     position: absolute;
     top: 50%;
     translate: 0% -50%;
-    right: -25%;
+    right: -10%;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
   }
 </style>
